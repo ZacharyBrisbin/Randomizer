@@ -11,7 +11,6 @@ public class RandomizerBackend {
 	private String line;
 
 	private int random;
-	private String item = "";
 
 	public RandomizerBackend(List<String> gameList) {
 		this.randomList = gameList;
@@ -36,21 +35,29 @@ public class RandomizerBackend {
 		return randomList;
 	}
 
-	public String setRandomAmount(int amount, List<String> randomized) {
-		randomize.clear();
-		item = "";
-		for (int i = 0; i < amount; i++) {
-			random = (int) (Math.random() * ((3178 - 1) + 1)) + 1;
-			randomize.add(randomized.get(random));
-		}
-		for (String r : randomize) {
-			item += r + "\n";
-		}
-		return item;
+	public String setRandomAmount(int amount, List<String> list) {
+		        randomize.clear();
+        StringBuilder result = new StringBuilder();
+
+        if (list.isEmpty()) {
+            return "";
+        }
+
+        Random rand = new Random();
+        for (int i = 0; i < amount; i++) {
+            int index = rand.nextInt(list.size()); // safe index
+            randomize.add(list.get(index));
+        }
+
+        for (String item : randomize) {
+            result.append(item).append("\n");
+        }
+
+        return result.toString();
 	}
 
-	public String search(String search, List<String> gamers) {
-		if (gamers.contains(search)) {
+	public String search(String search, List<String> list) {
+		if (list.contains(search)) {
 			return search;
 		} else {
 			return "";
