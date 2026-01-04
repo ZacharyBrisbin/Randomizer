@@ -44,17 +44,17 @@ Evan, Frank
 
 ### Go into the correct folder
 ```bash
-cd "wherever you have the folder"/src/gui
+cd "wherever you have the folder"/src
 ```
 
-### Compile
+### Compile (if you want a fresh compilation)
 ```bash
-javac randomizergui.java
+javac gui/RandomizerGUI.java
 ```
 
 ### Run
 ```bash
-java randomizergui
+java RandomizerGUI
 ```
 
 📤 Example Output
