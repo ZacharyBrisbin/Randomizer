@@ -12,8 +12,8 @@ public class RandomizerBackend {
 
 	private int random;
 
-	public RandomizerBackend(List<String> gameList) {
-		this.randomList = gameList;
+	public RandomizerBackend(List<String> list) {
+		this.randomList = list;
 	}
 
 	public List<String> getInfo(File file) {
